@@ -12,16 +12,16 @@ public class TwitterConfig {
     @Autowired
     TwitterFactoryWrapper twitterFactoryWrapper;
 
-    @Value("twitter.consumer.key")
+    @Value("${twitter.consumer.key}")
     String consumerKey;
 
-    @Value("twitter.consumer.secret")
+    @Value("${twitter.consumer.secret}")
     String consumerSecret;
 
-    @Value("twitter.access.token")
+    @Value("${twitter.access.token}")
     String accessToken;
 
-    @Value("twitter.access.secret")
+    @Value("${twitter.access.secret}")
     String accessSecret;
 
     public Twitter getTwitter() {
