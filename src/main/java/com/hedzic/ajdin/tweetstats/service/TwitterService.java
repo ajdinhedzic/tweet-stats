@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import twitter4j.Status;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class TwitterService {
@@ -17,12 +17,13 @@ public class TwitterService {
 
     public List<Tweet> findTweetsByTwitterHandle(String twitterHandle) {
         List<Status> statuses = twitterRepository.fetchTweetsBy(twitterHandle);
-        List<Tweet> tweets = new ArrayList<>();
-        for (Status status : statuses) {
-            Tweet tweet = new Tweet();
-            tweet.setText(status.getText());
-            tweets.add(tweet);
-        }
+        List<Tweet> tweets = statuses.stream()
+                .map(status -> {
+                    Tweet tweet = new Tweet();
+                    tweet.setText(status.getText());
+                    return tweet;
+                })
+                .collect(Collectors.toList());
         return tweets;
     }
 }
