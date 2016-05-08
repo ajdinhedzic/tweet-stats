@@ -47,6 +47,11 @@
             <artifactId>json</artifactId>
             <version>20160212</version>
         </dependency>
+        <dependency>
+            <groupId>com.monkeylearn</groupId>
+            <artifactId>monkeylearn-java</artifactId>
+            <version>0.1.2</version>
+        </dependency>
         <!-- test dependencies -->
         <dependency>
             <groupId>junit</groupId>
