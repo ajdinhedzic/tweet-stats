@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class HomeController {
+public class WelcomeController {
 
     @Autowired
     private TwitterService twitterService;
@@ -25,5 +25,11 @@ public class HomeController {
     @ResponseBody
     String findTweetsByTwitterHandle(@PathVariable String twitterHandle) {
         return new JSONObject().put("tweets", twitterService.findTweetsByTwitterHandle(twitterHandle)).toString();
+    }
+
+    @RequestMapping(value = "/{twitterHandle}/sentiment", method = RequestMethod.GET)
+    @ResponseBody
+    String sentimentByTwitterHandle(@PathVariable String twitterHandle) {
+        return twitterService.analyzeTweets(twitterHandle).toString();
     }
 }
