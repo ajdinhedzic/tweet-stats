@@ -16,9 +16,8 @@ public class WelcomeController {
     private TwitterService twitterService;
 
     @RequestMapping("/")
-    @ResponseBody
     String home() {
-        return "";
+        return "index.html";
     }
 
     @RequestMapping(value = "/{twitterHandle}/tweets", method = RequestMethod.GET)
