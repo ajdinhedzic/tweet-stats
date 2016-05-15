@@ -2,3 +2,5 @@
 .idea
 target/
 application.properties
+node/
+node_modules/
