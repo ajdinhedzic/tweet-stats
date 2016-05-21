@@ -25,5 +25,5 @@ gulp.task('build', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(['src/main/resources/static/jsx/**/*'], ['scripts']);
+  gulp.watch(['src/main/resources/static/jsx/**/*'], ['build']);
 });
