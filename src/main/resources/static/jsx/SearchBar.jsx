@@ -4,7 +4,6 @@ var FormGroup = require('react-bootstrap/lib/FormGroup');
 var ControlLabel = require('react-bootstrap/lib/ControlLabel');
 var Button = require('react-bootstrap/lib/Button');
 
-
 class SearchBar extends React.Component {
 	constructor(props){
 		super(props);
@@ -18,6 +17,11 @@ class SearchBar extends React.Component {
 		this.setState({value: e.target.value});
 	}
 
+ 	handleClick(e){
+ 		e.preventDefault();
+		this.props.onChange(this.state.value);
+	}
+
 	render(){
 		return (
 			<form className="col-md-6 col-md-offset-3">
@@ -28,7 +32,7 @@ class SearchBar extends React.Component {
 							type="text"
 							value={this.state.value}
 							placeholder="Enter twitter handle"
-							onChange={this.handleChange}
+							onChange={this.handleChange.bind(this)}
 						/>
 					</FormGroup>
 				</div>
@@ -36,7 +40,8 @@ class SearchBar extends React.Component {
 					<Button 
 						type="submit" 
 						bsSize="lg" 
-						bsStyle="success">
+						bsStyle="success"
+						onClick={this.handleClick.bind(this)}>
 							Search
 					</Button>
 				</div>
