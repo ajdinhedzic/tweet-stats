@@ -11,7 +11,8 @@
     "font-awesome": "^4.3.0",
     "react": "15.0.2",
     "react-bootstrap": "^0.29.4",
-    "react-dom": "15.0.2"
+    "react-dom": "15.0.2",
+    "react-router": "^2.4.1"
   },
   "devDependencies": {
     "babel-core": "^6.1.2",

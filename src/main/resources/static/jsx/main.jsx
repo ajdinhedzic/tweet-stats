@@ -2,6 +2,8 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var Header = require('./Header');
 var TwitterHandleSearch = require('./TwitterHandleSearch');
+var Router = require('react-router');
+var Route = require('react-router');
 
 class Hello extends React.Component {
 	render(){
@@ -15,6 +17,8 @@ class Hello extends React.Component {
 }
 
 ReactDOM.render(
-    <Hello />,
+    <Router>
+		<Route path="/" component={Hello}>
+    </Router>,
     window.document.querySelector("#target")
 );
