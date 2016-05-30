@@ -1,24 +1,12 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Header = require('./Header');
-var TwitterHandleSearch = require('./TwitterHandleSearch');
-var Router = require('react-router');
-var Route = require('react-router');
+var {Router, Route} = require('react-router');
+var Index = require('./Index')
 
-class Hello extends React.Component {
-	render(){
-		return (
-			<div>
-				<Header/>
-				<TwitterHandleSearch />
-			</div>
-		)
-	}
-}
+const routes = {
+	path: '/',
+	component: Index
+} 
 
-ReactDOM.render(
-    <Router>
-		<Route path="/" component={Hello}>
-    </Router>,
-    window.document.querySelector("#target")
+ReactDOM.render(<Router routes={routes} />, document.querySelector("#target")
 );
