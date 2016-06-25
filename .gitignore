@@ -4,3 +4,4 @@ target/
 application.properties
 node/
 node_modules/
+index.js
