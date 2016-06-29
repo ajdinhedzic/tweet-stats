@@ -2,11 +2,16 @@ var React = require('react');
 var Header = require('./Header');
 
 class SearchResult extends React.Component {
+
+	constructor(props){
+		super(props);
+	}
+
 	render(){
 		return (
 			<div>
 				<Header/>
-				<p>Changed</p>
+				<p>{this.props.location.state.response}</p>
 			</div>
 		)
 	}
