@@ -30,7 +30,6 @@ public class SentimentAnalysisRepositoryImpl implements SentimentAnalysisReposit
         } catch (MonkeyLearnException e) {
             return new JSONArray();
         }
-        System.out.println("classify = " + classify.arrayResult);
         return classify.arrayResult;
     }
 
@@ -39,5 +38,4 @@ public class SentimentAnalysisRepositoryImpl implements SentimentAnalysisReposit
                 .map(Tweet::getText);
         return tweetStream.toArray(size -> new String[size]);
     }
-
 }
