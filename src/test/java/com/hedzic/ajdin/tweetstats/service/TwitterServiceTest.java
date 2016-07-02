@@ -3,7 +3,7 @@ package com.hedzic.ajdin.tweetstats.service;
 import com.hedzic.ajdin.tweetstats.domain.Tweet;
 import com.hedzic.ajdin.tweetstats.doubles.StatusDouble;
 import com.hedzic.ajdin.tweetstats.repository.SentimentAnalysisRepositoryImpl;
-import com.hedzic.ajdin.tweetstats.repository.TwitterRepository;
+import com.hedzic.ajdin.tweetstats.repository.TwitterRepositoryImpl;
 import org.json.JSONObject;
 import org.json.simple.JSONArray;
 import org.junit.Test;
@@ -29,7 +29,7 @@ public class TwitterServiceTest {
     TwitterService twitterService;
 
     @Mock
-    TwitterRepository twitterRepository;
+    TwitterRepositoryImpl twitterRepository;
 
     @Mock
     SentimentAnalysisRepositoryImpl analysisRepository;
