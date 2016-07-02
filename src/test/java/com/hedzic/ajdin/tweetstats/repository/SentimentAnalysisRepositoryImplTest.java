@@ -8,11 +8,11 @@ import java.util.Collections;
 
 import static org.junit.Assert.assertEquals;
 
-public class SentimentAnalysisRepositoryTest {
+public class SentimentAnalysisRepositoryImplTest {
 
     @Test
     public void extractTextFromTweetsReturnsArray() throws Exception {
-        SentimentAnalysisRepository sentimentAnalysisRepository = new SentimentAnalysisRepository();
+        SentimentAnalysisRepositoryImpl sentimentAnalysisRepository = new SentimentAnalysisRepositoryImpl();
         Tweet tweet = new Tweet();
         tweet.setText("this is a tweet");
         String[] tweets = sentimentAnalysisRepository.extractTextFromTweets(Collections.singletonList(tweet));
@@ -22,7 +22,7 @@ public class SentimentAnalysisRepositoryTest {
 
     @Test
     public void extractTextFromTweetsReturnsArrayOfTextFromTweets() throws Exception {
-        SentimentAnalysisRepository sentimentAnalysisRepository = new SentimentAnalysisRepository();
+        SentimentAnalysisRepositoryImpl sentimentAnalysisRepository = new SentimentAnalysisRepositoryImpl();
         Tweet tweet = new Tweet();
         tweet.setText("this is a tweet");
         Tweet otherTweet = new Tweet();

@@ -2,7 +2,7 @@ package com.hedzic.ajdin.tweetstats.service;
 
 import com.hedzic.ajdin.tweetstats.domain.Tweet;
 import com.hedzic.ajdin.tweetstats.doubles.StatusDouble;
-import com.hedzic.ajdin.tweetstats.repository.SentimentAnalysisRepository;
+import com.hedzic.ajdin.tweetstats.repository.SentimentAnalysisRepositoryImpl;
 import com.hedzic.ajdin.tweetstats.repository.TwitterRepository;
 import org.json.JSONObject;
 import org.json.simple.JSONArray;
@@ -32,7 +32,7 @@ public class TwitterServiceTest {
     TwitterRepository twitterRepository;
 
     @Mock
-    SentimentAnalysisRepository analysisRepository;
+    SentimentAnalysisRepositoryImpl analysisRepository;
 
     @Test
     public void findTweetsByTwitterHandleCallsTwitterRepositoryFindTweetsBy() throws Exception {
