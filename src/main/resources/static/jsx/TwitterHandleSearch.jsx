@@ -20,9 +20,8 @@ class TwitterHandleSearch extends React.Component {
 
 		request.onload = function() {
 		  if (request.status >= 200 && request.status < 400) {
-		    var resp = request.responseText;
+		    var resp = JSON.parse(request.responseText);
 				this.setState({responseText:resp});
-		    console.log(this.state.responseText);
 				browserHistory.push({
 					pathname: 'analysis',
 					state: { response: this.state.responseText }

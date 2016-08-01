@@ -3,4 +3,4 @@
 target/
 node/
 node_modules/
-index.js
+*index.js
